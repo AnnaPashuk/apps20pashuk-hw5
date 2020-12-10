@@ -2,13 +2,12 @@ package ua.edu.ucu.stream;
 
 import ua.edu.ucu.function.*;
 
-import javax.swing.text.html.HTMLDocument;
+
 import java.util.Arrays;
 import java.util.Iterator;
-import java.util.List;
+
 
 public class AsIntStream implements IntStream {
-    private Iterator iterator;
     private int[] values;
 
     private AsIntStream(int... values) {
@@ -29,7 +28,7 @@ public class AsIntStream implements IntStream {
         if (this.isEmpty()) {
             throw new UnsupportedOperationException("Not supported yet.");
         }
-        Double averageMean = 0.0;
+        Double averageMean;
         Double sumValues = new Double(this.sum());
         long sizeValues = this.count();
         averageMean = (sumValues / sizeValues);
@@ -39,7 +38,7 @@ public class AsIntStream implements IntStream {
     @Override
     public Integer max() {
         if (isEmpty()) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            throw new UnsupportedOperationException("Not supported yet.");
         }
         Integer maxValue = Integer.MIN_VALUE;
         for (Integer elem : this.values) {
@@ -53,7 +52,7 @@ public class AsIntStream implements IntStream {
     @Override
     public Integer min() {
         if (isEmpty()) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            throw new UnsupportedOperationException("Not supported yet.");
         }
         Integer minValue = Integer.MAX_VALUE;
         for (Integer elem : this.values) {
